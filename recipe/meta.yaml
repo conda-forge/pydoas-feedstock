@@ -32,7 +32,7 @@ test:
     - pydoas
     - pydoas.test
   commands:
-    - py.test --pyargs package_name
+    - py.test --pyargs pydoas
 
 about:
   home: https://github.com/jgliss/pydoas.git
