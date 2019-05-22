@@ -11,7 +11,7 @@ source:
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
@@ -27,9 +27,12 @@ requirements:
 test:
   requires:
     - setuptools
+    - pytest
   imports:
     - pydoas
     - pydoas.test
+  commands:
+    - py.test --pyargs package_name
 
 about:
   home: https://github.com/jgliss/pydoas.git
