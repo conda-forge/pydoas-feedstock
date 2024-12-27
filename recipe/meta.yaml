@@ -6,20 +6,20 @@ package:
   version: "{{ version }}"
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 965b5626b5b6766279f4371ea063bd3b7f6441f49aa23fe9dc29b2e26bb88062
 
 build:
   noarch: python
-  number: 2
+  number: 3
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
     - pip
-    - python
+    - python {{ python_min }}
   run:
-    - python
+    - python >={{ python_min }}
     - numpy
     - matplotlib-base
     - pandas
@@ -28,6 +28,7 @@ test:
   requires:
     - setuptools
     - pytest
+    - python {{ python_min }}
   imports:
     - pydoas
     - pydoas.test
