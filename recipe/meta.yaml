@@ -17,9 +17,9 @@ build:
 requirements:
   host:
     - pip
-    - python
+    - python {{ python_min }}
   run:
-    - python
+    - python >= {{ python_min }}
     - numpy
     - matplotlib-base
     - pandas
@@ -28,6 +28,7 @@ test:
   requires:
     - setuptools
     - pytest
+    - python {{ python_min }} 
   imports:
     - pydoas
     - pydoas.test
