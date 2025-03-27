@@ -18,6 +18,8 @@ requirements:
   host:
     - pip
     - python 3.11
+    - setuptools
+    - setuptools_scm
   run:
     - python >=3.11
     - numpy
@@ -29,10 +31,12 @@ test:
     - setuptools
     - pytest
     - python 3.11
+  source_files:
+    - test
   imports:
     - pydoas
   commands:
-    - pytest test
+    - pytest -Wi test
 
 about:
   home: https://github.com/jgliss/pydoas.git
