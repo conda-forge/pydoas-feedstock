@@ -1,5 +1,5 @@
 {% set name = "pydoas" %}
-{% set version = "2.0.3rc1" %}
+{% set version = "2.0.3" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 2406da53b0edf5c81f59b474cc053efdcc587e2a756f152a575bd96c86f1230e
+  sha256: 3499a48460c5b2cff0aa5b37f21f4faead59e4f071d74e370915d88386414b11
 
 build:
   noarch: python
